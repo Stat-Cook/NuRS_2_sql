@@ -6,7 +6,7 @@ from .utils import reader_dict
 
 class FileHandler:
 
-    def __init__(self, file, path, db="Dev"):
+    def __init__(self, file, path, db=None):
         self.path = path
         self.file = file
         _, self.ext = os.path.splitext(file)
@@ -30,7 +30,10 @@ class FileHandler:
 
     @property
     def table(self):
-        return ".".join([self.db, self.file])
+        if self.db:
+            return ".".join([self.db, self.file])
+        else:
+            return self.file
 
     def to_sql(self, engine, head=5):
         self.data.head(head).to_sql(

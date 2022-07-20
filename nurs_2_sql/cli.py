@@ -15,7 +15,7 @@ def cli_parser():
                         default="DEFAULT", nargs="?")
 
     parser.add_argument("-d", "--db", help='Target database for tables',
-                        default="dev", nargs="?")
+                        default="", nargs="?")
 
     args = parser.parse_args()
 
