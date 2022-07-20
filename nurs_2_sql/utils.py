@@ -10,9 +10,11 @@ reader_dict = {
 }
 
 default_dict = dict(
-    dialect="mysql",
-    username="nurs_2_sql",
-    password="password",
-    host="localhost",
-    port=3306
+    drivername = "mssql+pyodbc",
+    username = "",
+    password = "",
+    host = "localhost//SQLEXPRESS",
+    port = "",
+    database = "DEFAULT",
+    driver = "ODBC Driver 17 for SQL Server"
 )
